@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đăng ký tài khoản mới</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/register.css')}}">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="register-form">
+                    <form action="" method="post">
+                        <h1>Đăng ký tài khoản mới</h1>
+                        <div class="input-box">
+
+                            <input type="text" placeholder="Nhập username" name='name'>
+                        </div>
+                        <div class="input-box">
+
+                            <input type="password" placeholder="Nhập mật khẩu" name='password'>
+                        </div>
+                        <div class="input-box">
+
+                            <input type="text" placeholder="Nhập email" name='email'>
+                        </div>
+                                       
+                        <div class="btn-box">
+                            <button type="submit" <a href="/register">Đăng Ký</a>  
+                            </button>
+                        </div>
+                        <div class="input-form">
+                            <p><a href="/login">Quay Lại</a></p>
+                        </div>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <div class=flashes>
+                        {% for message in messages %}
+                        <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    </form>
+                    
+                </div>
+                
+            </div>
+            
+        </main>
+    </body>
+</html>
